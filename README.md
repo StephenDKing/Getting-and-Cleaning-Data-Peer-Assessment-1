@@ -1,4 +1,4 @@
-Getting-and-Cleaning-Data-Peer-Assessment-1
+Getting and Cleaning Data Peer Assessment 1
 ===========================================
 
 To run grab script run_analysis.R
