@@ -24,7 +24,6 @@ xMerged <- rbind(xTrain, xTest)
 yMerged <- rbind(yTrain, yTest)
 subject <- rbind(subjectTrain, subjectTest)
 
-
 # 3. Uses descriptive activity names to name the activities in the data set
 # 4. Appropriately labels the data set with descriptive variable names. 
 ### Build Features and Labels then apply
@@ -44,12 +43,7 @@ yMerged$Activity <- factor(yMerged$Activity, labels = Labels)
 allData <- cbind(yMerged, subject, xMerged)
 
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
-
-meanLower <- grep("mean", names(allData))
-meanUpper <- grep("Mean", names(allData))
-
-mean <- append(meanLower, meanUpper, after = length(meanLower))
-
+mean <- grep("MEAN", toupper(names(allData)))
 sDev <- grep("std", names(allData))  # select std's
 vars <- append(mean, sDev, after = length(mean))
 vars <- append(c(1,2), vars, after = length(c(1,2)))
